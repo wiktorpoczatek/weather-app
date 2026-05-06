@@ -1,3 +1,19 @@
+:root {
+  --color-primary: #E6EDF3;
+  --color-secondary: #8B949E;
+  --color-tertiary: #3FB950;
+  --color-neutral: #050810;
+  --color-surface: #0B0F16;
+  --color-sun: #E8B84B;
+  --color-error: #FF5555;
+  --border-default: 1px solid #1E2535;
+  --border-accent: 1px solid #3FB950;
+  --border-subtle: 1px solid rgba(30, 37, 53, 0.6);
+  --rounded-sm: 4px;
+  --rounded-md: 6px;
+  --rounded-lg: 8px;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -5,6 +21,74 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
+  background-color: var(--color-neutral);
+  color: var(--color-primary);
   min-height: 100vh;
+}
+
+@keyframes cursor-blink {
+  50% { opacity: 0; }
+}
+
+.blink {
+  animation: cursor-blink 1s step-end infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.fade-in {
+  animation: fade-in 120ms ease-out forwards;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes cloud-drift {
+  0%, 100% { transform: translateX(0); }
+  50%       { transform: translateX(4px); }
+}
+
+@keyframes drop-fall {
+  0%   { transform: translateY(0);   opacity: 0; }
+  15%  { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { transform: translateY(6px); opacity: 0; }
+}
+
+@keyframes snow-fall {
+  0%, 100% { transform: translateY(0);   opacity: 1; }
+  50%       { transform: translateY(2px); opacity: 0.5; }
+}
+
+@keyframes storm-flash {
+  0%, 65%  { opacity: 1; }
+  67%       { opacity: 0; }
+  70%       { opacity: 1; }
+  73%       { opacity: 0; }
+  77%       { opacity: 1; }
+  100%      { opacity: 1; }
+}
+
+@keyframes wind-blow {
+  0%, 100% { transform: translateX(0); }
+  50%       { transform: translateX(-4px); }
+}
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  animation: reveal-up 0.35s ease-out forwards;
+}
+
+.reveal-delayed {
+  animation: reveal-up 0.35s ease-out 0.18s both;
 }
