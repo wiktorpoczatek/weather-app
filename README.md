@@ -6,6 +6,8 @@ A browser-based weather app built with React + Vite. Search any city to get curr
 ![Vite](https://img.shields.io/badge/Vite-5-646cff?logo=vite&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
+See it live here: **https://weather-app-olive-xi-93.vercel.app/**
+
 ---
 
 ## Features
